@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main">
+  <children>
+    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Tra Cứu">
+          <content>
+            <AnchorPane id="Content" disable="false" focusTraversable="false" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="14.0" layoutY="14.0" text="English" underline="false" wrapText="false">
+                  <font>
+                    <Font size="30.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <TextField fx:id="word_target" layoutX="14.0" layoutY="63.0" onKeyPressed="#searcher" prefWidth="500.0" promptText="Nhập Từ" text="" visible="true" />
+                <Button id="tim" layoutX="522.0" layoutY="62.0" mnemonicParsing="false" onAction="#search" text="Tìm" />
+                <Label font="$x1" layoutX="14.0" layoutY="104.0" text="Tiếng Việt" textAlignment="LEFT" />
+                <TextField id="word_explain" fx:id="word_explain1" alignment="TOP_LEFT" blendMode="DARKEN" disable="true" editable="true" focusTraversable="true" layoutX="14.0" layoutY="154.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="170.0" prefWidth="559.0" promptText="Giải Nghĩa" text="" />
+                <Text fx:id="word_explain" layoutX="24.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+                  <font>
+                    <Font size="20.0" />
+                  </font>
+                </Text>
+                <ListView fx:id="list" focusTraversable="true" layoutX="14.0" layoutY="89.0" onMouseClicked="#select" prefHeight="170.0" prefWidth="500.0" visible="false" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Thêm Từ">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab disable="false" text="Xóa Từ">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab text="Sửa Từ">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab text="Từ Điển">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ListView fx:id="show" editable="true" layoutX="29.0" layoutY="45.0" prefHeight="291.0" prefWidth="529.0" visible="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
