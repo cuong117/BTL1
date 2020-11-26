@@ -55,6 +55,10 @@ public abstract class Entity {
         this.alive = alive;
     }
 
+    public void setImg(Image img) {
+        this.img = img;
+    }
+
     public Rectangle getBounds() {
         return new Rectangle(x, y, Sprite.SCALED_SIZE, Sprite.SCALED_SIZE);
     }
