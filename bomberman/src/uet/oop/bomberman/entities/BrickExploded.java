@@ -11,6 +11,7 @@ public class BrickExploded extends Flame {
 
     @Override
     public void updateImg() {
-        img = Sprite.movingSprite(Sprite.brick_exploded, Sprite.brick_exploded1, Sprite.brick_exploded2, timeCounter, 30).getFxImage();
+        img = Sprite.movingSprite(Sprite.brick_exploded, Sprite.brick_exploded1
+                , Sprite.brick_exploded2, timeCounter, 30).getFxImage();
     }
 }

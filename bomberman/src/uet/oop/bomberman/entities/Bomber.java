@@ -180,8 +180,6 @@ public class Bomber extends MovingEntity {
     }
 
     public void setPower(int power) {
-        Sound.get_item.play();
-        Sound.get_item.seek(Sound.get_item.getStartTime());
         this.power = power;
         direction = null;
     }

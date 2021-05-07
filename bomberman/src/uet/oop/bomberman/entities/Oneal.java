@@ -11,8 +11,7 @@ public class Oneal extends Enemy {
     private int direction;
     protected Bomber bomber;
     Random random = new Random();
-    Rectangle onealRadius = new Rectangle(x - Sprite.SCALED_SIZE * 8, y - Sprite.SCALED_SIZE * 8,
-            Sprite.SCALED_SIZE * 8 * 2, Sprite.SCALED_SIZE * 8 * 2);
+
 
     public Oneal(int xUnit, int yUnit, Image img, Bomber bomber) {
         super(xUnit, yUnit, img);
@@ -21,21 +20,25 @@ public class Oneal extends Enemy {
         setSpeed(1);
         generateDirection();
         alive = true;
+
     }
 
     public void goLeft() {
         super.goLeft();
-        img = Sprite.movingSprite(Sprite.oneal_left1, Sprite.oneal_left2, Sprite.oneal_left3, left++, 18).getFxImage();
+        img = Sprite.movingSprite(Sprite.oneal_left1, Sprite.oneal_left2
+                , Sprite.oneal_left3, left++, 18).getFxImage();
     }
 
     public void goRight() {
         super.goRight();
-        img = Sprite.movingSprite(Sprite.oneal_right1, Sprite.oneal_right2, Sprite.oneal_right3, right++, 18).getFxImage();
+        img = Sprite.movingSprite(Sprite.oneal_right1
+                , Sprite.oneal_right2, Sprite.oneal_right3, right++, 18).getFxImage();
     }
 
     public void goUp() {
         super.goUp();
-        img = Sprite.movingSprite(Sprite.oneal_left1, Sprite.oneal_left2, Sprite.oneal_left3, up++, 18).getFxImage();
+        img = Sprite.movingSprite(Sprite.oneal_left1
+                , Sprite.oneal_left2, Sprite.oneal_left3, up++, 18).getFxImage();
     }
 
     public void goDown() {
@@ -67,7 +70,7 @@ public class Oneal extends Enemy {
 
     public void generateDirection() {
         Rectangle re = bomber.getBounds();
-        if (onealRadius.intersects(re)) {
+        if (this.getRadius().intersects(re)) {
             setSpeed(2);
             int vertical = random.nextInt(2);
 
@@ -107,5 +110,10 @@ public class Oneal extends Enemy {
         else if (bomber.y > y)
             return 3;
         return -1;
+    }
+
+    private Rectangle getRadius(){
+        return new Rectangle(x - Sprite.SCALED_SIZE * 8, y - Sprite.SCALED_SIZE * 8,
+                Sprite.SCALED_SIZE * 8 * 2, Sprite.SCALED_SIZE * 8 * 2);
     }
 }

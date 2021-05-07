@@ -1,6 +1,7 @@
 package uet.oop.bomberman.entities;
 
 import javafx.scene.image.Image;
+import uet.oop.bomberman.Sound;
 
 public abstract class Item extends StillEntity {
     public Item(int xUnit, int yUnit, Image img) {
@@ -8,5 +9,8 @@ public abstract class Item extends StillEntity {
         setLayer(1);
     }
 
-    public abstract void powerUp(Bomber bomber);
+    public void powerUp(Bomber bomber){
+        Sound.get_item.play();
+        Sound.get_item.seek(Sound.get_item.getStartTime());
+    }
 }

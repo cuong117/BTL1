@@ -27,7 +27,7 @@ public class BombermanGame extends Application {
     public static int WIDTH = 20;
     public static int HEIGHT = 15;
     public final static int MaxLevel = 5;
-    public static int level = 1;
+    public static int level = 2;
     private boolean newMap = true;
     private int time = 0;
     private Label exits;
@@ -231,7 +231,6 @@ public class BombermanGame extends Application {
         for (int i = stillObjects.size() - 1; i >= 0; i--) {
             stillObjects.get(i).render(gc);
         }
-        enemies.forEach(g -> g.render(gc));
         List<Bomb> bombs = myBomber.getBombs();
         for (Bomb bomb : bombs) {
             if (bomb.isAlive()) bomb.render(gc);
@@ -242,6 +241,7 @@ public class BombermanGame extends Application {
                 }
             }
         }
+        enemies.forEach(g -> g.render(gc));
         myBomber.render(gc);
     }
 
